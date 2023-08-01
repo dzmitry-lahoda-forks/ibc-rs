@@ -654,9 +654,8 @@ dependencies = [
 
 [[package]]
 name = "ibc-proto"
-version = "0.32.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11c352715b36685c2543556a77091fb16af5d26257d5ce9c28e6756c1ccd71aa"
+version = "0.32.0"
+source = "git+https://github.com/cosmos/ibc-proto-rs.git?rev=af385af#af385afa8d7e4c407f5d12242ea1dfc6d273580b"
 dependencies = [
  "base64 0.21.2",
  "bytes",
@@ -673,13 +672,12 @@ dependencies = [
 [[package]]
 name = "ics23"
 version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af9e8f569c5cc88e08b8d076dc207e0748aa1f52d4b84910ec919c8f2bed6ea7"
+source = "git+https://github.com/cosmos/ics23.git?rev=27868a6#27868a61368e6bcfd922c87f511677717c677f00"
 dependencies = [
  "anyhow",
  "bytes",
  "hex",
- "pbjson",
+ "informalsystems-pbjson",
  "prost",
  "ripemd",
  "serde",
@@ -721,6 +719,15 @@ checksum = "d5477fe2230a79769d8dc68e0eabf5437907c0457a5614a9e8dddb67f65eb65d"
 dependencies = [
  "equivalent",
  "hashbrown 0.14.0",
+]
+
+[[package]]
+name = "informalsystems-pbjson"
+version = "0.6.0"
+source = "git+https://github.com/informalsystems/pbjson?rev=e54f504#e54f504cb04e429bdb3cf14f0a659965235fd077"
+dependencies = [
+ "base64 0.13.1",
+ "serde",
 ]
 
 [[package]]
@@ -832,16 +839,6 @@ name = "paste"
 version = "1.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c"
-
-[[package]]
-name = "pbjson"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "048f9ac93c1eab514f9470c4bc8d97ca2a0a236b84f45cc19d69a59fc11467f6"
-dependencies = [
- "base64 0.13.1",
- "serde",
-]
 
 [[package]]
 name = "pin-project-lite"
