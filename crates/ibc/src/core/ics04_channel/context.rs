@@ -9,7 +9,7 @@ use crate::core::ics24_host::path::{
 use crate::core::{ContextError, ExecutionContext, ValidationContext};
 use crate::prelude::*;
 use core::time::Duration;
-use num_traits::float::FloatCore;
+// use num_traits::float::FloatCore;
 
 use crate::core::ics02_client::consensus_state::ConsensusState;
 use crate::core::ics03_connection::connection::ConnectionEnd;
@@ -132,13 +132,14 @@ where
 }
 
 pub(crate) fn calculate_block_delay(
-    delay_period_time: &Duration,
-    max_expected_time_per_block: &Duration,
+    _delay_period_time: &Duration,
+    _max_expected_time_per_block: &Duration,
 ) -> u64 {
-    if max_expected_time_per_block.is_zero() {
-        return 0;
-    }
+    panic!("cosmwasm")
+    // if max_expected_time_per_block.is_zero() {
+    //     return 0;
+    // }
 
-    FloatCore::ceil(delay_period_time.as_secs_f64() / max_expected_time_per_block.as_secs_f64())
-        as u64
+    // FloatCore::ceil(delay_period_time.as_secs_f64() / max_expected_time_per_block.as_secs_f64())
+    //     as u64
 }
