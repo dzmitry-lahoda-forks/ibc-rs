@@ -13,11 +13,7 @@ pub struct ProofSpecs(Vec<ProofSpec>);
 impl ProofSpecs {
     /// Returns the specification for Cosmos-SDK proofs
     pub fn cosmos() -> Self {
-        vec![
-            ics23::iavl_spec(),       // Format of proofs-iavl (iavl merkle proofs)
-            ics23::tendermint_spec(), // Format of proofs-tendermint (crypto/ merkle SimpleProof)
-        ]
-        .into()
+        panic!()
     }
 
     pub fn is_empty(&self) -> bool {
@@ -53,27 +49,14 @@ impl From<ProofSpecs> for Vec<RawProofSpec> {
 struct ProofSpec(RawProofSpec);
 
 impl From<RawProofSpec> for ProofSpec {
-    fn from(spec: RawProofSpec) -> Self {
-        Self(RawProofSpec {
-            leaf_spec: spec.leaf_spec.map(|lop| LeafOp::from(lop).0),
-            inner_spec: spec.inner_spec.map(|ispec| InnerSpec::from(ispec).0),
-            max_depth: spec.max_depth,
-            min_depth: spec.min_depth,
-            prehash_key_before_comparison: spec.prehash_key_before_comparison,
-        })
+    fn from(_spec: RawProofSpec) -> Self {
+     panic!()
     }
 }
 
 impl From<ProofSpec> for RawProofSpec {
-    fn from(spec: ProofSpec) -> Self {
-        let spec = spec.0;
-        RawProofSpec {
-            leaf_spec: spec.leaf_spec.map(|lop| LeafOp(lop).into()),
-            inner_spec: spec.inner_spec.map(|ispec| InnerSpec(ispec).into()),
-            max_depth: spec.max_depth,
-            min_depth: spec.min_depth,
-            prehash_key_before_comparison: spec.prehash_key_before_comparison,
-        }
+    fn from(_spec: ProofSpec) -> Self {
+        panic!()
     }
 }
 

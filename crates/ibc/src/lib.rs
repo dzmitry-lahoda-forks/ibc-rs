@@ -51,7 +51,6 @@ pub use signer::Signer;
 pub mod applications;
 pub mod clients;
 pub mod core;
-pub mod hosts;
 
 #[cfg(any(test, feature = "mocks", feature = "mocks-no-std"))]
 pub mod mock;

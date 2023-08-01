@@ -9,7 +9,6 @@ use core::str::FromStr;
 use derive_more::Into;
 use displaydoc::Display;
 
-use crate::clients::ics07_tendermint::client_type as tm_client_type;
 use crate::core::ics02_client::client_type::ClientType;
 
 use crate::prelude::*;
@@ -235,7 +234,7 @@ impl FromStr for ClientId {
 
 impl Default for ClientId {
     fn default() -> Self {
-        Self::new(tm_client_type(), 0).expect("Never fails because we use a valid client type")
+        panic!()
     }
 }
 
