@@ -26,6 +26,7 @@ std = [
     "prost/std",
     "bytes/std",
     "subtle-encoding/std",
+    "serde_json/std",
     "sha2/std",
     "displaydoc/std",
     "num-traits/std",
@@ -58,7 +59,7 @@ serde = { version = "1.0", default-features = false, optional = true }
 # 1. it does not have hash tables, which have few reson on chain
 # 2. no floating points as these are hardware dependant
 # 3. have method to covert primitives without producing bad wasm which cannot operate on chain (smaller binary size)
-serde_json =  { package = "serde-json-wasm", version = "0.5.1", default-features = false, optional = true}
+serde_json =  { package = "serde-json-wasm", git = "https://github.com/dzmitry-lahoda-forks/serde-json-wasm", rev = "8a7e522c0e4de36a6dfb535766f26a9941017d81", default-features = false, optional = true}
 # can use old one to test if any other discrepancy
 # serde_json = { version = "1", default-features = false}
 
