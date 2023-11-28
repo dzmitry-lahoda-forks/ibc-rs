@@ -447,8 +447,7 @@ dependencies = [
 [[package]]
 name = "fixed-hash"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "835c052cb0c08c1acf6ffd71c022172e18723949c8282f2b9f27efbc51e64534"
+source = "git+https://github.com/dzmitry-lahoda-forks/parity-common.git?branch=dz/3#13e658dfbf2fdd326224ebd147fd2b2406809e84"
 dependencies = [
  "static_assertions",
 ]
@@ -621,7 +620,7 @@ dependencies = [
  "scale-info",
  "schemars",
  "serde",
- "uint",
+ "uint 0.9.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -952,8 +951,7 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 [[package]]
 name = "impl-serde"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ebc88fc67028ae3db0c853baa36269d398d5f45b6982f95549ff5def78c935cd"
+source = "git+https://github.com/dzmitry-lahoda-forks/parity-common.git?branch=dz/3#13e658dfbf2fdd326224ebd147fd2b2406809e84"
 dependencies = [
  "serde",
 ]
@@ -1132,12 +1130,12 @@ dependencies = [
 [[package]]
 name = "primitive-types"
 version = "0.12.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b34d9fd68ae0b74a41b21c03c2f62847aa0ffea044eee893b4c140b37e244e2"
+source = "git+https://github.com/dzmitry-lahoda-forks/parity-common.git?branch=dz/3#13e658dfbf2fdd326224ebd147fd2b2406809e84"
 dependencies = [
  "fixed-hash",
  "impl-serde",
- "uint",
+ "schemars",
+ "uint 0.9.5 (git+https://github.com/dzmitry-lahoda-forks/parity-common.git?branch=dz/3)",
 ]
 
 [[package]]
@@ -1604,6 +1602,17 @@ name = "uint"
 version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "76f64bba2c53b04fcab63c01a7d7427eadc821e3bc48c34dc9ba29c501164b52"
+dependencies = [
+ "byteorder",
+ "crunchy",
+ "hex",
+ "static_assertions",
+]
+
+[[package]]
+name = "uint"
+version = "0.9.5"
+source = "git+https://github.com/dzmitry-lahoda-forks/parity-common.git?branch=dz/3#13e658dfbf2fdd326224ebd147fd2b2406809e84"
 dependencies = [
  "byteorder",
  "crunchy",

@@ -109,7 +109,7 @@ impl FromStr for Amount {
     type Err = TokenTransferError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let amount = U256::from_dec_str(s).map_err(TokenTransferError::InvalidAmount)?;
+        let amount = U256::from_dec_str(s).map_err(|_x| TokenTransferError::InvalidToken)?;
         Ok(Self(amount))
     }
 }

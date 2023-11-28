@@ -59,7 +59,8 @@ schema = [
     "ibc-core/schema", 
     "ibc-proto/json-schema", 
     "serde", 
-    "std"
+    "std",
+    "primitive-types/json-schema",
 ]
 borsh = [
     "dep:borsh",
